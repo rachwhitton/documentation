@@ -44,3 +44,16 @@ define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
 ```
 #Adding network sites#
+
+#defurbling the database#
+terminus wp search-replace --network
+##configuration##
+wp_site.domain
+wp_options option_name=siteurl, option_name=home
+wp_*_options option_name=siteurl, option_name=home
+wp_blogs.domain
+##content##
+wp_*_posts.guid
+wp_posts.guid
+##unknown##
+wp_signups?
