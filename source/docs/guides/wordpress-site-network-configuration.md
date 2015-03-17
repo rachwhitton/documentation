@@ -1,5 +1,7 @@
 #Prerequisites#
 Pantheon does not currently support wildcard domains
+
+Don't actually create sites in dev/test and expect them to work across environments
 #Create WordPress site#
 #Change to a paid service Level#
 #register domain#
