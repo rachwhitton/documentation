@@ -3,6 +3,8 @@ Pantheon does not currently support wildcard domains
 #Create WordPress site#
 #Change to a paid service Level#
 #register domain#
+#Add DNS entries#
+
 #Edit wp-config.php#
 ```
 define( 'WP_ALLOW_MULTISITE', true );
