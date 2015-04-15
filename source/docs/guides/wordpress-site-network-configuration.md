@@ -46,7 +46,26 @@ define('BLOG_ID_CURRENT_SITE', 1);
 #Adding network sites#
 
 #defurbling the database#
-terminus wp search-replace --network
+Run these once
+```
+UPDATE wp_site SET domain = replace(domain, 'dev.mydomain.com', 'test.mydomain.com');
+
+UPDATE wp_sitemeta SET meta_value = replace(meta_value, 'dev.mydomain.com', 'test.mydomain.com') WHERE meta_key = 'siteurl';
+
+UPDATE wp_blogs SET domain = replace(domain, 'dev.mydomain.com','test.mydomain.com');
+```
+
+Run these for each site (wp_2_options, wp_3_options, etc.)
+```
+UPDATE wp_options SET option_value = replace(option_value, 'dev.mydomain.com', 'test.mydomain.com') WHERE option_name = 'home' OR option_name = 'siteurl';
+
+UPDATE wp_posts SET guid = replace(guid, 'dev.mydomain.com','test.mydomain.com');
+
+UPDATE wp_posts SET post_content = replace(post_content, 'dev.mydomain.com', 'test.mydomain.com');
+
+UPDATE wp_postmeta SET meta_value = replace(meta_value,'dev.mydomain.com','test.mydomain.com');
+
+```
 ##configuration##
 wp_site.domain
 wp_options option_name=siteurl, option_name=home
